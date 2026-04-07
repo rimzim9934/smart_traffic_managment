@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/dashboardFragment">
+
+    <fragment
+        android:id="@+id/dashboardFragment"
+        android:name="com.example.smarttrafficapp.ui.dashboard.DashboardFragment"
+        android:label="Dashboard">
+        <argument
+            android:name="junctionId"
+            app:argType="integer"
+            android:defaultValue="0" />
+        <argument
+            android:name="junctionName"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="@null" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/mapFragment"
+        android:name="com.example.smarttrafficapp.ui.map.MapFragment"
+        android:label="Map" />
+
+    <fragment
+        android:id="@+id/analyticsFragment"
+        android:name="com.example.smarttrafficapp.ui.analytics.AnalyticsFragment"
+        android:label="Analytics" />
+
+</navigation>

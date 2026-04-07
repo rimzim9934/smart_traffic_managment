@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="16dp"
+    android:layout_marginVertical="6dp"
+    app:cardBackgroundColor="#FFFFFF"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="2dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <!-- Signal Light Indicator -->
+        <FrameLayout
+            android:id="@+id/flSignalContainer"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/bg_circle_signal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/tvSignalShort"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="GO"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+        </FrameLayout>
+
+        <!-- Lane Info -->
+        <TextView
+            android:id="@+id/tvLaneLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:text="North Lane"
+            android:textColor="#333333"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@id/flSignalContainer"
+            app:layout_constraintTop_toTopOf="@id/flSignalContainer" />
+
+        <TextView
+            android:id="@+id/tvCongestionTag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/bg_congestion_tag_low"
+            android:paddingHorizontal="6dp"
+            android:paddingVertical="1dp"
+            android:text="Low"
+            android:textColor="#2D6A4F"
+            android:textSize="10sp"
+            app:layout_constraintBottom_toBottomOf="@id/tvLaneLabel"
+            app:layout_constraintStart_toEndOf="@id/tvLaneLabel"
+            app:layout_constraintTop_toTopOf="@id/tvLaneLabel" />
+
+        <TextView
+            android:id="@+id/tvLaneStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="32 vehicles · Green phase"
+            android:textColor="#999999"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="@id/tvLaneLabel"
+            app:layout_constraintTop_toBottomOf="@id/tvLaneLabel" />
+
+        <!-- Timer -->
+        <TextView
+            android:id="@+id/tvTimer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="22s"
+            android:textColor="#2D6A4F"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/tvLaneStatus"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tvLaneLabel" />
+
+        <View
+            android:id="@+id/viewProgress"
+            android:layout_width="0dp"
+            android:layout_height="4dp"
+            android:layout_marginTop="12dp"
+            android:background="#2D6A4F"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvLaneStatus" />
+
+        <!-- Action Buttons (Visible during selection/emergency) -->
+        <LinearLayout
+            android:id="@+id/llLaneActions"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            app:layout_constraintTop_toBottomOf="@id/viewProgress">
+
+            <Button
+                android:id="@+id/btnForceGreen"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="36dp"
+                android:layout_marginEnd="4dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_outline_button"
+                android:text="Force Green"
+                android:textAllCaps="false"
+                android:textColor="#666666"
+                android:textSize="12sp" />
+
+            <Button
+                android:id="@+id/btnEmergency"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="36dp"
+                android:layout_marginStart="4dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_outline_button_red"
+                android:text="Emergency"
+                android:textAllCaps="false"
+                android:textColor="#EF4444"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>
