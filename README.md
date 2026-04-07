@@ -82,9 +82,7 @@ Urban traffic congestion is a growing challenge in cities like Bhopal, Madhya Pr
 | ![Dashboard](screenshots/dashboard.jpg) | ![Map](screenshots/map.jpg) | ![Analytics](screenshots/analytics.jpg) |
 | Live signal status for 4 lanes | Bhopal city intersection map | Vehicle count & traffic trend charts |
 
-> **Note:** Place your screenshots inside a `/screenshots` folder in the repository root.
 
----
 
 ## 🏗️ System Architecture
 
